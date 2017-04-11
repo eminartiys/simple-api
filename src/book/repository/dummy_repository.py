@@ -1,14 +1,17 @@
-class Repository(object):
+from book import Book
+
+
+class Dummy_Repository(object):
 
     def store(self, book):
         """
-        Store a book
+        Store an book
         Args:
            book (src.book.Book)
         Returns:
            src.book.Book
         """
-        raise NotImplementedError
+        pass
 
     def get(self, book_id):
         """
@@ -18,7 +21,14 @@ class Repository(object):
         Returns:
            src.book.Book
         """
-        raise NotImplementedError
+        book = Book(
+            book_id='1234',
+            title='this is title',
+            content='this is content',
+            published_at=1479885808
+        )
+
+        return book
 
     def delete(self, book):
         """
@@ -28,9 +38,9 @@ class Repository(object):
         Returns:
           None
         """
-        raise NotImplementedError
+        pass
 
-    def update(self, id, book):
+    def update(self, book):
         """
         Update book
         Args:
@@ -38,4 +48,4 @@ class Repository(object):
         Returns:
            (src.book.Book)
         """
-        raise NotImplementedError
+        pass
